@@ -1,28 +1,52 @@
 {
-  "name": "wilton",
+  "name": "wtw-custom-display",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --open",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build && rollup -c",
+    "deploy": "vue-cli-service build && rollup -c && grunt deploy",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "vue": "^2.5.13"
+    "@fortawesome/fontawesome": "^1.1.3",
+    "@fortawesome/fontawesome-free-brands": "^5.0.6",
+    "@fortawesome/fontawesome-free-regular": "^5.0.6",
+    "@fortawesome/fontawesome-free-solid": "^5.0.6",
+    "@fortawesome/vue-fontawesome": "^0.0.22",
+    "axios": "^0.17.1",
+    "document-register-element": "^1.7.2",
+    "get-youtube-id": "^1.0.0",
+    "vue": "^2.5.13",
+    "vue-custom-element": "^2.0.4",
+    "vue-infinite-scroll": "^2.0.2",
+    "vue-masonry": "^0.11.1",
+    "vue-moment": "^3.1.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-alpha.5",
     "@vue/cli-plugin-eslint": "^3.0.0-alpha.5",
     "@vue/cli-service": "^3.0.0-alpha.5",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "grunt": "^1.0.1",
+    "grunt-aws": "^0.6.2",
+    "grunt-invalidate-cloudfront": "^1.0.0",
+    "rollup-plugin-babel": "^4.0.0-beta.0",
+    "rollup-plugin-buble": "^0.19.1",
+    "rollup-plugin-commonjs": "^8.3.0",
+    "rollup-plugin-image-base64": "^1.0.0",
+    "rollup-plugin-json": "^2.3.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-globals": "^1.1.0",
+    "rollup-plugin-node-resolve": "^3.0.2",
+    "rollup-plugin-replace": "^2.0.0",
+    "rollup-plugin-uglify": "^3.0.0",
+    "rollup-plugin-vue": "^3.0.0",
     "vue-template-compiler": "^2.5.13"
   },
   "vue": {
-    "lintOnSave": true
-  },
-  "babel": {
-    "presets": [
-      "@vue/app"
-    ]
+    "lintOnSave": false,
+    "baseUrl": "./"
   },
   "eslintConfig": {
     "extends": [
